@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+build/
+dist/
+*.spec
+
+preview_*.png
+fuga_nocciolina_records.json
