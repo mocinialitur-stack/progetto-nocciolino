@@ -1,28 +1,40 @@
 # Fuga della Nocciolina
 
-Un gioco arcade 2D in Python ambientato a Montefiascone: guida una nocciolina cartoon, raccogli i bicchieri di Campari & Prosecco e sfuggi alle inseguitrici.
+Gioco arcade 2D in Python ambientato in una mappa infinita ispirata a Montefiascone.
+
+## Requisiti
+
+- Python 3.10 o piu recente
+- `pygame` (installato dal file `requirements.txt`)
 
 ## Avvio
 
-Apri PowerShell in questa cartella ed esegui:
+Apri PowerShell nella cartella del progetto ed esegui:
 
 ```powershell
-& 'C:\Users\Luca\AppData\Local\Programs\Python\Python313\python.exe' .\game.py
+python -m pip install -r requirements.txt
+python game.py
 ```
 
-In un nuovo terminale, dopo l'aggiornamento del PATH, dovrebbe funzionare anche:
+Per installare le dipendenze in un ambiente isolato:
 
 ```powershell
-python .\game.py
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python game.py
 ```
 
 ## Comandi
 
 - `WASD` oppure frecce direzionali: movimento
 - `Invio` / `Spazio`: inizia o ricomincia
-- Dopo la morte: scrivi 3 caratteri e premi `Invio` per salvare il record
+- Dopo la morte: scrivi 3 caratteri e premi `Invio` per il record arcade
 - `Esc`: chiude il gioco
 
-Ogni bicchiere raccolto vale un punto, allunga la protuberanza della nocciolina, riduce leggermente accelerazione e velocita, e fa arrivare una nuova inseguitrice. Le inseguitrici non aumentano piu con il passare del tempo.
+## Note
 
-Ogni tanto appare Michele in bicicletta: raccoglilo per diventare immune alle inseguitrici per 10 secondi. I record arcade vengono salvati in `fuga_nocciolina_records.json` accanto al gioco.
+- La freccia `CAMPARI` indica il prossimo bicchiere.
+- Le inseguitrici arrivano sia con i bicchieri sia con il passare del tempo.
+- Musica, suoni, grafica e mappa sono generati direttamente dal codice: non servono file esterni.
+- I record sono salvati localmente in `fuga_nocciolina_records.json`, creato automaticamente e non incluso nel repository.
